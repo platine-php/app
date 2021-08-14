@@ -7,8 +7,8 @@
 [![License](https://poser.pugx.org/platine-php/app/license)](https://packagist.org/packages/platine-php/app)
 [![Build Status](https://img.shields.io/travis/platine-php/app/develop.svg?style=flat-square)](https://travis-ci.com/platine-php/app)  
 [![Quality Score](https://img.shields.io/scrutinizer/g/platine-php/app.svg?style=flat-square)](https://scrutinizer-ci.com/g/platine-php/app)
-[![Maintainability](https://api.codeclimate.com/v1/badges/837cde5fc5b07163aa58/maintainability)](https://codeclimate.com/github/platine-php/app/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/837cde5fc5b07163aa58/test_coverage)](https://codeclimate.com/github/platine-php/app/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/dfbc12c74216074cca58/maintainability)](https://codeclimate.com/github/platine-php/app/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/dfbc12c74216074cca58/test_coverage)](https://codeclimate.com/github/platine-php/app/test_coverage)
 
 ### Requirements 
 You can use **Platine** for web or command line application. For web application: 
