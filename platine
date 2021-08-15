@@ -9,7 +9,7 @@
     $app->setConfigPath(__DIR__ . '/config')
           ->setAppPath(__DIR__)
           ->setNamespace('Platine\\App\\')
-          ->setVendorPath(dirname(__DIR__) . '/../vendor');
+          ->setVendorPath(__DIR__ . '/vendor');
 
     $kernel = $app->make(ConsoleKernel::class); 
 
