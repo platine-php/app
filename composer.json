@@ -58,7 +58,7 @@
         "static": "phpstan analyze",
         "check": "phpcs",
         "check-fix": "phpcbf",
-        "analyze": "phpmd src xml phpmd.xml"
+        "analyze": "phpmd app xml phpmd.xml"
     },
 	
     "minimum-stability": "dev",

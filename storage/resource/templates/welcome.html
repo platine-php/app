@@ -11,7 +11,8 @@
         <link href="{% static css/app.css %}" type="text/css" rel="stylesheet" /> 
     </head>
     <body>
-        {{ middleware }}
+        {{ middleware }} <br />
+        {% current_url %}
         <script src="{% static js/app.js %}"></script>
     </body>
 </html>

@@ -4,9 +4,9 @@
         'name' => 'PLATINE',
         'debug' => true,
         'env' => 'dev',
-        'url' => 'http://localhost/platine-php/packages/app/public',
-        'base_path' => '/platine-php/packages/app/public',
+        'url' => 'http://localhost/app/public',
+        'base_path' => '',
         'static_dir' => 'static',
-        'response_chunck_size' => null,
+        'response_chunck_size' => 4096,
         'timezone' => 'Africa/Bangui'
     ];
