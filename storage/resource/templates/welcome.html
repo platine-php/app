@@ -11,8 +11,24 @@
         <link href="{% static css/app.css %}" type="text/css" rel="stylesheet" /> 
     </head>
     <body>
-        {{ middleware }} <br />
-        {% current_url %}
+        <div class="block">
+            <div>
+                <h1 class='fw-title'>Platine Framework <b class='fw-version'>v1.0.0-dev</b></h1>
+            </div>
+            <div>
+                <h2 class="fw-description">Platine Framework is a lightweight, high-performance, simple and elegant PHP Web framework</h2>
+              <br />
+              <p><a href='https://github.com/platine-php/app' target='_blank'>Framework on Github</a></p>
+              <br />
+              <hr />
+              <p>Version : <b class='fw-version'>1.0.0-dev</b></p>
+              <p>Required PHP version : <b>PHP 7.4, 8.0</b></p>
+              <hr />
+              <p>Current HTTP Action: <b class = "text-muted label-danger">{{ action }}</b>
+              <p>Demo middleware: <b class = "text-muted label-danger">{{ middleware }}</b>
+              <p>Current view: <b class = "text-muted label-danger">{{ view }}</b>
+            </div>
+        </div>
         <script src="{% static js/app.js %}"></script>
     </body>
 </html>

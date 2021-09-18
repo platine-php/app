@@ -1,3 +1,4 @@
+.env
 .idea
 git.sh
 tests.sh

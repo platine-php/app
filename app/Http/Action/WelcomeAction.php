@@ -79,12 +79,15 @@ class WelcomeAction implements RequestHandlerInterface
      */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
+        $data = [
+            'action' => __FILE__,
+            'view' => sprintf('%sresource%stemplates%swelcome.html', STORAGE_PATH, DS, DS),
+            'middleware' => $request->getAttribute('middleware'),
+        ];
         return new TemplateResponse(
             $this->template,
             'welcome',
-            [
-                'middleware' => $request->getAttribute('middleware')
-            ]
+            $data
         );
     }
 }

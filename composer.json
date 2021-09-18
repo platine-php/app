@@ -24,6 +24,7 @@
     },
 	
     "require-dev": {
+        "mikey179/vfsstream": "~1.6",
         "phpmd/phpmd": "@stable",
         "phpunit/phpunit": "^9.5",
         "platine-php/dev": "1.0.x-dev",
@@ -39,8 +40,11 @@
 
     "autoload-dev": {
         "psr-4":{
-            "Platine\\Test\\": "tests"
-        }
+            "Platine\\Test\\App\\": "tests"
+        },
+        "files": [
+            "tests/fixtures/mocks.php"
+        ]
     },
     
     "config": {

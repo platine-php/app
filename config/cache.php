@@ -5,7 +5,7 @@
         'driver' => 'file',
         'storages' => [
             'file' => [
-                'path' => __DIR__ . '/../storage/tmp/cache',
+                'path' => env('PL_CACHE_FILE_PATH', __DIR__ . '/../storage/tmp/cache'),
                 'prefix' => 'cache_',
             ],
             'apcu' => [],

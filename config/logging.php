@@ -7,7 +7,7 @@
         'driver' => 'file',
         'handlers' => [
             'file' => [
-                'path' => __DIR__ . '/../storage/tmp/logs',
+                'path' => env('PL_LOG_PATH', __DIR__ . '/../storage/tmp/logs'),
                 'prefix' => 'app.',
                 'level' => LogLevel::ERROR,
             ]

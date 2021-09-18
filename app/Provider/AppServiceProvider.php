@@ -72,7 +72,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ServerCommand::class);
         $this->app->bind(AdapterInterface::class, LocalAdapter::class);
         $this->app->bind(Filesystem::class);
-        
+
         $this->addCommand(ServerCommand::class);
     }
 }

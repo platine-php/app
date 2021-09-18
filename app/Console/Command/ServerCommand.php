@@ -77,17 +77,22 @@ class ServerCommand extends Command
         $host = $this->getOptionValue('address');
         $port = $this->getOptionValue('port');
         $path = $this->getOptionValue('root');
-        $cmd = sprintf('php -S %s:%s -t %s', $host, $port, $path);
+        $cmd = sprintf('%s -S %s:%s -t %s', PHP_BINARY, $host, $port, $path);
         $writer = $this->io()->writer();
         $writer->boldYellow(sprintf('Running command [%s]', $cmd), true);
         $shell = new Shell($cmd);
 
-        $shell->setOptions(null, $_ENV, null, ['bypass_shell' => true]);
+        $shell->setOptions(null, null, null, ['bypass_shell' => false]);
 
-        $shell->execute();
+        $shell->execute(true);
         $writer->boldWhite($shell->getOutput(), true);
         if ($shell->getExitCode() !== 0) {
             $writer->boldRed($shell->getErrorOutput(), true);
+        } else {
+            while ($ouptut = $shell->getOutput()) {
+                $writer->boldWhite($ouptut, true);
+                flush();
+            }
         }
     }
 }

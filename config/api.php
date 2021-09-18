@@ -11,7 +11,7 @@
             ]
         ],
         'sign' => [
-            'secret' => '', // please set it
+            'secret' => env('PL_API_SIGN_SECRET', ''), // please set it
             'hmac' => [
                 'signature_algo' => 'sha256',
                 'token_header_algo' => 'HS256',

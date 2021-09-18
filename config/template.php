@@ -7,7 +7,7 @@ use Platine\Framework\Template\Tag\StaticTag;
         'cache_expire' => 5600,
         'cache_dir' => __DIR__ . '/../storage/cache',
         'cache_prefix' => '__platine_template',
-        'template_dir' => __DIR__ . '/../storage/resource/templates',
+        'template_dir' => env('PL_TEMPLATE_PATH', __DIR__ . '/../storage/resource/templates'),
         'file_extension' => 'html',
         'auto_escape' => true,
         'filters' => [],

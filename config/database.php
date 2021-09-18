@@ -1,23 +1,23 @@
 <?php
 
     return [
-        'default' => 'mysql',
+        'default' => env('PL_DB_DRIVER', 'sqllite'),
 
         'connections' => [
             'mysql' => [
                 'driver' => 'mysql',
-                'database' => '',
-                'hostname' => '127.0.0.1',
-                'port' => 3306,
-                'username' => 'root',
-                'password' => '',
+                'database' => env('PL_DB_NAME', ''),
+                'hostname' => env('PL_DB_HOST', ''),
+                'port' => env('PL_DB_PORT', 0, 'int'),
+                'username' => env('PL_DB_USER', 'root'),
+                'password' => env('PL_DB_PASSWORD', ''),
                 'persistent' => false,
             ]
         ],
 
         'migration' => [
             'table' => 'migration',
-            'path' => __DIR__ . '/../storage/migrations',
+            'path' => env('PL_MIGRATION_PATH', __DIR__ . '/../storage/migrations'),
         ]
 
     ];
