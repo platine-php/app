@@ -18,6 +18,7 @@
         'migration' => [
             'table' => 'migration',
             'path' => env('PL_MIGRATION_PATH', __DIR__ . '/../storage/migrations'),
+            'seed_path' => env('PL_SEED_PATH', __DIR__ . '/../storage/migrations/seeds'),
         ]
 
     ];
