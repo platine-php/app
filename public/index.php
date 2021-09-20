@@ -64,6 +64,7 @@ use Platine\Framework\Kernel\HttpKernel;
 $app = new Application();
 $app->setConfigPath(CONFIG_PATH)
       ->setRootPath(ROOT_PATH)
+      ->setAppPath(APP_PATH)
       ->setVendorPath(VENDOR_PATH)
       ->setStoragePath(STORAGE_PATH)
       ->setEnvironment(ENVIRONMENT);

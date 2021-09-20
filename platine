@@ -65,6 +65,7 @@ use Platine\Framework\Kernel\ConsoleKernel;
 $app = new Application();
 $app->setConfigPath(CONFIG_PATH)
   ->setRootPath(ROOT_PATH)
+  ->setAppPath(APP_PATH)
   ->setVendorPath(VENDOR_PATH)
   ->setStoragePath(STORAGE_PATH)
   ->setNamespace('Platine\\App\\')
