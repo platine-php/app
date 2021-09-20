@@ -8,5 +8,5 @@
         'base_path' => env('PL_APP_BASE_PATH', ''),
         'static_dir' => 'static',
         'response_chunck_size' => 4096,
-        'timezone' => env('', 'UTC')
+        'timezone' => env('PL_APP_TIMEZONE', 'UTC')
     ];
