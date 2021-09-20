@@ -46,11 +46,6 @@ define('STORAGE_PATH', ROOT_PATH . 'storage' . DS);
 define('VENDOR_PATH', ROOT_PATH . 'vendor' . DS);
 
 /**
-* The path to the environment file
-*/
-define('ENVIRONMENT_FILE_PATH', '');
-
-/**
 * The environment of your application (production, test, development).
 *
 * if your application is still in development you use the value "dev"
@@ -68,11 +63,10 @@ use Platine\Framework\Kernel\HttpKernel;
 
 $app = new Application();
 $app->setConfigPath(CONFIG_PATH)
-      ->setAppPath(ROOT_PATH)
+      ->setRootPath(ROOT_PATH)
       ->setVendorPath(VENDOR_PATH)
       ->setStoragePath(STORAGE_PATH)
-      ->setEnvironment(ENVIRONMENT)
-      ->setEnvironmentFile(ENVIRONMENT_FILE_PATH);
+      ->setEnvironment(ENVIRONMENT);
 
 /** @var HttpKernel $kernel */
 $kernel = $app->make(HttpKernel::class);
