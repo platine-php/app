@@ -47,6 +47,7 @@ declare(strict_types=1);
 
 namespace Platine\App\Http\Action;
 
+use Platine\Framework\App\Application;
 use Platine\Framework\Http\Response\TemplateResponse;
 use Platine\Http\Handler\RequestHandlerInterface;
 use Platine\Http\ResponseInterface;
@@ -66,12 +67,20 @@ class WelcomeAction implements RequestHandlerInterface
     protected Template $template;
 
     /**
+     * The application instance
+     * @var Application
+     */
+    protected Application $app;
+
+    /**
      * Create new instance
      * @param Template $template
+     * @param Application $app
      */
-    public function __construct(Template $template)
+    public function __construct(Template $template, Application $app)
     {
         $this->template = $template;
+        $this->app = $app;
     }
 
     /**
@@ -81,7 +90,7 @@ class WelcomeAction implements RequestHandlerInterface
     {
         $data = [
             'action' => __FILE__,
-            'view' => sprintf('%sresource%stemplates%swelcome.html', STORAGE_PATH, DS, DS),
+            'view' => sprintf('%s/resource/templates/welcome.html', $this->app->getStoragePath()),
             'middleware' => $request->getAttribute('middleware'),
         ];
         return new TemplateResponse(

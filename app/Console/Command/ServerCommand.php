@@ -58,15 +58,23 @@ class ServerCommand extends Command
 {
 
     /**
+     * The shell instance to use
+     * @var Shell
+     */
+    protected Shell $shell;
+
+    /**
      * Create new instance
      * {@inheritodc}
      */
-    public function __construct()
+    public function __construct(Shell $shell)
     {
         parent::__construct('server', 'Command to manage PHP development server');
         $this->addOption('-a|--address', 'Server address', '0.0.0.0', true);
         $this->addOption('-p|--port', 'Server listen port', '8080', true);
         $this->addOption('-r|--root', 'Server document root', 'public', true);
+
+        $this->shell = $shell;
     }
 
     /**
@@ -80,19 +88,13 @@ class ServerCommand extends Command
         $cmd = sprintf('%s -S %s:%s -t %s', PHP_BINARY, $host, $port, $path);
         $writer = $this->io()->writer();
         $writer->boldYellow(sprintf('Running command [%s]', $cmd), true);
-        $shell = new Shell($cmd);
+        $this->shell->setCommand($cmd);
+        $this->shell->setOptions(null, null, null, ['bypass_shell' => false]);
 
-        $shell->setOptions(null, null, null, ['bypass_shell' => false]);
-
-        $shell->execute(true);
-        $writer->boldWhite($shell->getOutput(), true);
-        if ($shell->getExitCode() !== 0) {
-            $writer->boldRed($shell->getErrorOutput(), true);
-        } else {
-            while ($ouptut = $shell->getOutput()) {
-                $writer->boldWhite($ouptut, true);
-                flush();
-            }
+        $this->shell->execute(true);
+        $writer->boldWhite($this->shell->getOutput(), true);
+        if ($this->shell->getExitCode() !== 0) {
+            $writer->boldRed($this->shell->getErrorOutput(), true);
         }
     }
 }

@@ -30,9 +30,9 @@
  */
 
 /**
- *  @file AppServiceProvider.php
+ *  @file ConsoleServiceProvider.php
  *
- *  The Application service provider class
+ *  The application console service provider class
  *
  *  @package    Platine\App\Provider
  *  @author Platine Developers team
@@ -47,15 +47,15 @@ declare(strict_types=1);
 
 namespace Platine\App\Provider;
 
-use Platine\App\Http\Action\WelcomeAction;
-use Platine\App\Http\Middleware\DemoMiddleware;
+use Platine\App\Console\Command\ServerCommand;
+use Platine\Console\Command\Shell;
 use Platine\Framework\Service\ServiceProvider;
 
 /**
- * @class AppServiceProvider
+ * @class ConsoleServiceProvider
  * @package Platine\App\Provider
  */
-class AppServiceProvider extends ServiceProvider
+class ConsoleServiceProvider extends ServiceProvider
 {
 
     /**
@@ -63,7 +63,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(DemoMiddleware::class);
-        $this->app->bind(WelcomeAction::class);
+        $this->app->bind(Shell::class);
+        $this->app->bind(ServerCommand::class);
+
+        $this->addCommand(ServerCommand::class);
     }
 }

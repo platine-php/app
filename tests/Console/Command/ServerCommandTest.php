@@ -7,6 +7,7 @@ namespace Platine\Test\App\Console\Command;
 use org\bovigo\vfs\vfsStream;
 use Platine\App\Console\Command\ServerCommand;
 use Platine\Console\Application;
+use Platine\Console\Command\Shell;
 use Platine\Console\IO\Interactor;
 use Platine\Console\Output\Color;
 use Platine\Console\Output\Writer;
@@ -34,20 +35,6 @@ class ServerCommandTest extends PlatineTestCase
 
     public function testExecuteSuccess(): void
     {
-        global $mock_function_exists_to_true,
-               $mock_proc_open_to_res,
-               $mock_is_resource_to_true,
-               $mock_proc_get_status_to_array,
-               $mock_proc_get_status_to_array_running_false,
-               $mock_stream_get_contents_to_foo;
-
-        $mock_proc_get_status_to_array_running_false = true;
-        $mock_proc_get_status_to_array = true;
-        $mock_function_exists_to_true = true;
-        $mock_proc_open_to_res = true;
-        $mock_is_resource_to_true = true;
-        $mock_stream_get_contents_to_foo = true;
-
         $writer = $this->getWriterInstance();
         $interactor = $this->getMockInstance(Interactor::class, [
             'writer' => $writer
@@ -56,15 +43,18 @@ class ServerCommandTest extends PlatineTestCase
             'io' => $interactor
         ]);
 
-        $o = new ServerCommand();
+        $shell = $this->getMockInstance(Shell::class);
+        $o = new ServerCommand($shell);
         $o->bind($app);
         $o->parse(['platine']);
         $o->execute();
-        $expected = 'q';
+        $expected = 'Running command [' . PHP_BINARY . ' -S 0.0.0.0:8080 -t public]
+
+
+';
         $this->assertEquals($expected, $this->getConsoleOutputContent());
     }
 
-    /*
     public function testExecuteError(): void
     {
         $writer = $this->getWriterInstance();
@@ -75,15 +65,21 @@ class ServerCommandTest extends PlatineTestCase
             'io' => $interactor
         ]);
 
-        $o = new ServerCommand();
+        $shell = $this->getMockInstance(Shell::class, [
+            'getExitCode' => 19,
+            'getErrorOutput' => 'command error',
+        ]);
+        $o = new ServerCommand($shell);
         $o->bind($app);
-        $o->parse(['platine', 'config', '-l']);
-        $this->assertEquals('config', $o->getName());
+        $o->parse(['platine']);
         $o->execute();
-        $expected = 'a';
+        $expected = 'Running command [' . PHP_BINARY . ' -S 0.0.0.0:8080 -t public]
+
+command error
+';
         $this->assertEquals($expected, $this->getConsoleOutputContent());
     }
-    */
+
 
     /**
      * Return writer instance for test
