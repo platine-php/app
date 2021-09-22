@@ -4,7 +4,8 @@
         'auth' => [
             'path' => '/api',
             'url_whitelist' => [],
-            'expire' => 3600,
+            'token_expire' => 300,
+            'refresh_token_expire' => 7776000, // 3 months
             'headers' => [
                 'name' => 'Authorization',
                 'token_type' => 'Bearer',

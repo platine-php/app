@@ -27,7 +27,7 @@ use Platine\Framework\Service\Provider\TemplateServiceProvider;
         // PaginationServiceProvider::class,
         // SecurityServiceProvider::class,
         ConsoleServiceProvider::class,
-        
+
         //Custom
         AppServiceProvider::class,
     ];
