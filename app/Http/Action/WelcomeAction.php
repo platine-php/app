@@ -84,7 +84,7 @@ class WelcomeAction implements RequestHandlerInterface
     }
 
     /**
-     * {@inheritodc}
+     * {@inheritdoc}
      */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {

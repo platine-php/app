@@ -14,7 +14,6 @@ use Platine\Framework\App\Application;
  */
 class AppServiceProviderTest extends PlatineTestCase
 {
-
     public function testRegister(): void
     {
         $app = $this->getMockInstanceMap(Application::class);

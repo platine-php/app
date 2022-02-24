@@ -19,7 +19,6 @@ use Platine\Dev\PlatineTestCase;
  */
 class ServerCommandTest extends PlatineTestCase
 {
-
     protected $vfsRoot;
     protected $vfsPath;
     protected $vfsOutputStream;

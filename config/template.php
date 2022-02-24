@@ -4,14 +4,14 @@ use Platine\Framework\Template\Tag\CurrentUrlTag;
 use Platine\Framework\Template\Tag\StaticTag;
 
     return [
-        'cache_expire' => 5600,
-        'cache_dir' => __DIR__ . '/../storage/cache',
-        'cache_prefix' => '__platine_template',
-        'template_dir' => env('PL_TEMPLATE_PATH', __DIR__ . '/../storage/resource/templates'),
+        'cache_expire'   => env('PL_TEMPLATE_CACHE_TTL', 5600, 'int'),
+        'cache_dir'      => __DIR__ . '/../storage/cache',
+        'cache_prefix'   => env('PL_TEMPLATE_CACHE_FILE_PREFIX', '__platine_template'),
+        'template_dir'   => env('PL_TEMPLATE_PATH', __DIR__ . '/../storage/resource/templates'),
         'file_extension' => 'html',
-        'auto_escape' => true,
-        'filters' => [],
-        'tags' => [
+        'auto_escape'    => true,
+        'filters'        => [],
+        'tags'           => [
             'static' => StaticTag::class,
             'current_url' => CurrentUrlTag::class,
         ],

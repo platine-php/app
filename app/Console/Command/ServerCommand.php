@@ -56,7 +56,6 @@ use Platine\Console\Command\Shell;
  */
 class ServerCommand extends Command
 {
-
     /**
      * The shell instance to use
      * @var Shell
@@ -65,7 +64,7 @@ class ServerCommand extends Command
 
     /**
      * Create new instance
-     * {@inheritodc}
+     * {@inheritdoc}
      */
     public function __construct(Shell $shell)
     {
@@ -78,7 +77,7 @@ class ServerCommand extends Command
     }
 
     /**
-     * {@inheritodc}
+     * {@inheritdoc}
      */
     public function execute()
     {

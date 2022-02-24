@@ -17,7 +17,6 @@ use Platine\Template\Template;
  */
 class WelcomeActionTest extends PlatineTestCase
 {
-
     public function testHandle(): void
     {
         $app = $this->getMockInstance(Application::class);

@@ -16,7 +16,6 @@ use Platine\Http\ServerRequest;
  */
 class DemoMiddlewareTest extends PlatineTestCase
 {
-
     public function testProcess(): void
     {
         $request = $this->getMockInstance(ServerRequest::class);
