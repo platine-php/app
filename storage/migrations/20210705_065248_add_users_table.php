@@ -34,15 +34,14 @@ class AddUsersTable20210705065248 extends AbstractMigration
                  ->description('The user status, A=Active, D=Deactive')
                  ->defaultValue('D');
 
-            $table->integer('age')
-                 ->size('tiny')
-                 ->description('The user age');
-
             $table->string('lastname')
                  ->description('The user lastname');
 
             $table->string('firstname')
                  ->description('The user firstname');
+				 
+			$table->string('role')
+                 ->description('The user role or function');
 
             $table->datetime('created_at')
                   ->description('created date')
