@@ -7,7 +7,6 @@ use Platine\Framework\Migration\AbstractMigration;
 
 class AddUsersTable20210705065248 extends AbstractMigration
 {
-
     public function up(): void
     {
       //Action when migrate up
@@ -39,8 +38,8 @@ class AddUsersTable20210705065248 extends AbstractMigration
 
             $table->string('firstname')
                  ->description('The user firstname');
-				 
-			$table->string('role')
+
+            $table->string('role')
                  ->description('The user role or function');
 
             $table->datetime('created_at')

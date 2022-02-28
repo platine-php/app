@@ -7,7 +7,6 @@ use Platine\Framework\Migration\AbstractMigration;
 
 class AddPermissionsTable20210717094547 extends AbstractMigration
 {
-
     public function up(): void
     {
       //Action when migrate up

@@ -7,7 +7,6 @@ use Platine\Framework\Migration\AbstractMigration;
 
 class AddRolesTable20210705065247 extends AbstractMigration
 {
-
     public function up(): void
     {
       //Action when migrate up
