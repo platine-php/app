@@ -24,6 +24,8 @@ use Platine\Framework\Service\Provider\TemplateServiceProvider;
         // LangServiceProvider::class,
         CommandServiceProvider::class,
         // AuthServiceProvider::class,
+        // ApiAuthServiceProvider::class,
+        // AuditServiceProvider::class,
         // PaginationServiceProvider::class,
         // SecurityServiceProvider::class,
         ConsoleServiceProvider::class,
