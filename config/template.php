@@ -2,8 +2,10 @@
 
 use Platine\Framework\Template\Tag\CurrentUrlTag;
 use Platine\Framework\Template\Tag\StaticTag;
+use Platine\Template\Cache\NullCache;
 
     return [
+        'cache_driver'   => env('PL_TEMPLATE_CACHE_DRIVER', NullCache::class),
         'cache_expire'   => env('PL_TEMPLATE_CACHE_TTL', 5600, 'int'),
         'cache_dir'      => __DIR__ . '/../storage/cache',
         'cache_prefix'   => env('PL_TEMPLATE_CACHE_FILE_PREFIX', '__platine_template'),
