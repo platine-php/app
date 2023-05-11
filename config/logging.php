@@ -8,9 +8,10 @@
         'timestamp'  => env('PL_LOG_TIMESTAMP', false),
         'handlers' => [
             'file' => [
-                'path'   => env('PL_LOG_PATH', __DIR__ . '/../storage/tmp/logs'),
-                'prefix' => env('PL_LOG_FILE_PREFIX', 'app.'),
-                'level'  => env('PL_LOG_FILE_LEVEL', LogLevel::DEBUG),
+                'path'     => env('PL_LOG_PATH', __DIR__ . '/../storage/tmp/logs'),
+                'prefix'   => env('PL_LOG_FILE_PREFIX', 'app.'),
+                'level'    => env('PL_LOG_FILE_LEVEL', LogLevel::DEBUG),
+                'ip_addr'  => env('PL_LOG_FILE_IP_ADDR', false),
             ]
         ]
     ];
