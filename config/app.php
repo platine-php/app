@@ -4,6 +4,7 @@
         'name' => env('PL_APP_NAME', 'PLATINE'),
         'debug' => env('PL_APP_DEBUG', true),
         'env' => env('PL_APP_ENV', 'dev'),
+        'version' => env('PL_APP_VERSION', '1.0.0-dev'),
         'url' => env('PL_APP_URL', ''),
         'base_path' => env('PL_APP_BASE_PATH', ''),
         'static_dir' => 'static',
