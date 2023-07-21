@@ -7,6 +7,9 @@
             'http_methods' => ['POST', 'PUT', 'DELETE'],
             'url_whitelist' => []
         ],
+        'encryption' => [
+            'key' => env('PL_APP_KEY', ''),
+        ],
         'cors' => [
             'path' => '/api',
             'origins' => ['*'],
