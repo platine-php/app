@@ -26,5 +26,6 @@ composer create-project platine-php/app
 ### License
 MIT License See [LICENSE.MD](LICENSE.MD)
 
-### Documentation 
-Coming soon, be patient
+### Resources 
+ - [Documentation](https://docs.platine-php.com)  
+ - Tutorial Youtube (French): [Budget Management Application](https://www.youtube.com/playlist?list=PLbUHyVcL-6Q8H6ip40eSdpt4MjRXYGPz9)
