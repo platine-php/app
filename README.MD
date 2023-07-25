@@ -23,6 +23,22 @@ Platine Application can be installed using composer
 composer create-project platine-php/app
 ```
 
+### Install on docker
+If you want to test platine using docker follow the step below:
+- Build the platine image
+```bash
+docker-compose build app
+```
+- Run the containers
+```bash
+docker-compose up -d
+```
+- Install composer dependencies
+```bash
+docker-compose exec app composer install --no-interaction --optimize-autoloader --no-dev
+```
+Then open `http://server_domain_or_IP:8000`, for example `http://localhost:8000`.  
+
 ### License
 MIT License See [LICENSE.MD](LICENSE.MD)
 

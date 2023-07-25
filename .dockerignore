@@ -1,0 +1,9 @@
+.git
+.idea
+.env.prod
+.env
+storage/tmp/logs/*
+storage/tmp/cache/*
+storage/tmp/session/*
+nbproject
+vendor
