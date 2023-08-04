@@ -7,7 +7,7 @@
             'mysql' => [
                 'driver' => 'mysql',
                 'database' => env('PL_DB_NAME', ''),
-                'hostname' => env('PL_DB_HOST', ''),
+                'hostname' => env('PL_DB_HOST', '127.0.0.1'),
                 'port' => env('PL_DB_PORT', 3306, 'int'),
                 'username' => env('PL_DB_USER', 'root'),
                 'password' => env('PL_DB_PASSWORD', ''),
