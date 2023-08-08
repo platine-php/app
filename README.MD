@@ -9,7 +9,7 @@
 ![Build Status](https://github.com/platine-php/app/actions/workflows/ci.yml/badge.svg)
 [![Quality Score](https://img.shields.io/scrutinizer/g/platine-php/app.svg?style=flat-square)](https://scrutinizer-ci.com/g/platine-php/app)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/775a3aa3cc1a4e4282381633bf003128)](https://app.codacy.com/gh/platine-php/app/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/dfbc12c74216074cca58/test_coverage)](https://codeclimate.com/github/platine-php/app/test_coverage)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/775a3aa3cc1a4e4282381633bf003128)](https://app.codacy.com/gh/platine-php/app/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 
 ### Requirements 
 You can use **Platine** for web or command line application. For web application: 
