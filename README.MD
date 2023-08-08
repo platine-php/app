@@ -4,10 +4,11 @@
 [![Project Status](http://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
 [![Latest Stable Version](https://poser.pugx.org/platine-php/app/v/stable)](https://packagist.org/packages/platine-php/app)
 [![Latest Unstable Version](https://poser.pugx.org/platine-php/app/v/unstable)](https://packagist.org/packages/platine-php/app)
-[![License](https://poser.pugx.org/platine-php/app/license)](https://packagist.org/packages/platine-php/app)
-[![Build Status](https://img.shields.io/travis/com/platine-php/app?style=flat-square)](https://travis-ci.com/platine-php/app)  
+[![Total Downloads](https://poser.pugx.org/platine-php/app/downloads)](https://packagist.org/packages/platine-php/oauth2)
+[![License](https://poser.pugx.org/platine-php/app/license)](https://packagist.org/packages/platine-php/app)  
+![Build Status](https://github.com/platine-php/app/actions/workflows/ci.yml/badge.svg)
 [![Quality Score](https://img.shields.io/scrutinizer/g/platine-php/app.svg?style=flat-square)](https://scrutinizer-ci.com/g/platine-php/app)
-[![Maintainability](https://api.codeclimate.com/v1/badges/dfbc12c74216074cca58/maintainability)](https://codeclimate.com/github/platine-php/app/maintainability)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/775a3aa3cc1a4e4282381633bf003128)](https://app.codacy.com/gh/platine-php/app/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/dfbc12c74216074cca58/test_coverage)](https://codeclimate.com/github/platine-php/app/test_coverage)
 
 ### Requirements 
