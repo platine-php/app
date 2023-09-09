@@ -40,7 +40,7 @@
             'x-xss-protection' => '1; mode=block',
             'referrer-policy' => 'no-referrer',
             'clear-site-data' => [
-                'enable' => false,
+                'enable' => env('PL_SECURITY_CLEAR_SITE_DATA_ENABLE', false),
                 'all' => false,
                 'cache' => true,
                 'cookies' => true,
@@ -48,14 +48,14 @@
                 'execution-contexts' => true,
             ],
             'hsts' => [
-                'enable' => false,
+                'enable' => env('PL_SECURITY_HSTS_ENABLE', false),
                 'max-age' => 31536000,
                 'include-sub-domains' => false,
                 'preload' => false,
             ],
             'csp' => [
-                'enable' => true,
-                'report-only' => false,
+                'enable' => env('PL_SECURITY_CSP_ENABLE', true),
+                'report-only' => env('PL_SECURITY_CSP_REPORT_ONLY', false),
                 'report-to' => '',
                 'report-uri' => [],
                 'block-all-mixed-content' => false,
@@ -66,7 +66,9 @@
                 'default-src' => [
                     'self' => true,
                 ],
-                'font-src' => [],
+                'font-src' => [
+                    'self' => true,
+                ],
                 'form-action' => [
                     'self' => true,
                 ],
@@ -74,7 +76,9 @@
                     'self' => true,
                 ],
                 'frame-src' => [],
-                'img-src' => [],
+                'img-src' => [
+                    'self' => true,
+                ],
                 'manifest-src' => [],
                 'media-src' => [],
                 'navigate-to' => [
@@ -87,7 +91,7 @@
                     'script' => false,
                 ],
                 'sandbox' => [
-                    'enable' => false,
+                    'enable' => env('PL_SECURITY_CSP_SANDBOX_ENABLE', false),
                     'allow-downloads-without-user-activation' => false,
                     'allow-forms' => false,
                     'allow-modals' => false,
@@ -104,7 +108,7 @@
                 ],
                 'script-src' => [
                     'none' => false,
-                    'self' => false,
+                    'self' => true,
                     'report-sample' => false,
                     'allow' => [],
                     'schemes' => [],
@@ -120,7 +124,9 @@
                 ],
                 'script-src-attr' => [],
                 'script-src-elem' => [],
-                'style-src' => [],
+                'style-src' => [
+                    'self' => true,
+                ],
                 'style-src-attr' => [],
                 'style-src-elem' => [],
                 'trusted-types' => [
@@ -132,7 +138,7 @@
                 'worker-src' => [],
             ],
             'features-permissions' => [
-                'enable' => true,
+                'enable' => env('PL_SECURITY_FEATURE_PERMISSION_ENABLE', false),
                 'accelerometer' => [
                     'none' => false,
                     '*' => false,
