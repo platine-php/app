@@ -31,14 +31,14 @@
             'max_age' => 1800,
         ],
         'policies' => [
-            'server' => '',
+            'server' => 'Platine',
             'x-content-type-options' => 'nosniff',
             'x-download-options' => 'noopen',
             'x-frame-options' => 'sameorigin',
             'x-permitted-cross-domain-policies' => 'none',
             'x-powered-by' => '',
             'x-xss-protection' => '1; mode=block',
-            'referrer-policy' => 'no-referrer',
+            'referrer-policy' => 'strict-origin-when-cross-origin',
             'clear-site-data' => [
                 'enable' => env('PL_SECURITY_CLEAR_SITE_DATA_ENABLE', false),
                 'all' => false,
@@ -50,7 +50,7 @@
             'hsts' => [
                 'enable' => env('PL_SECURITY_HSTS_ENABLE', false),
                 'max-age' => 31536000,
-                'include-sub-domains' => false,
+                'include-sub-domains' => true,
                 'preload' => false,
             ],
             'csp' => [
