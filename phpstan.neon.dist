@@ -5,5 +5,5 @@ parameters:
     parallel:
         jobSize: 50
         maximumNumberOfProcesses: 4
-	universalObjectCratesClasses:
+    universalObjectCratesClasses:
         - Platine\Orm\Entity
