@@ -7,4 +7,8 @@ vendor
 nbproject
 .phpunit.result.cache
 .php_cs.cache
-!/**/.gitignore
+storage/tmp/logs/*.log
+storage/tmp/cache/*
+!storage/tmp/cache/.gitignore
+storage/tmp/session/*
+!storage/tmp/session/.gitignore
