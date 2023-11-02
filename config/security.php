@@ -4,7 +4,7 @@
         'csrf' => [
             'key' => 'csrf_key',
             'expire' => 600,
-            'http_methods' => ['POST', 'PUT', 'DELETE'],
+            'http_methods' => ['POST', 'PUT', 'PATCH', 'DELETE'],
             'url_whitelist' => []
         ],
         'encryption' => [
