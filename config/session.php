@@ -3,7 +3,7 @@
     return [
         'name'   => env('PL_APP_SESSION_NAME', 'PLATINE'),
         'driver' => env('PL_APP_SESSION_DRIVER', 'file'),
-        'ttl'    => env('PL_APP_SESSION_VALIDITY', 300, 'int'),
+        'ttl'    => env('PL_APP_SESSION_VALIDITY', 900, 'int'),
         'flash_key' => 'session_flash',
         'cookie' => [
             'lifetime' => env('PL_APP_SESSION_COOKIE_LIFETIME', 0, 'int'),
