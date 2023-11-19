@@ -1,0 +1,13 @@
+<?php
+
+    return [
+        'driver' => env('PL_APP_MAINTENANCE_DRIVER', 'file'),
+        'bypass_route' => '',
+        'url_whitelist' => [],
+        'cookie_lifetime' => env('PL_APP_MAINTENANCE_COOKIE_LIFETIME', 43200, 'int'),
+        'storages' => [
+            'file' => [
+                'path'   => env('PL_MAINTENANCE_FILE_PATH', __DIR__ . '/../storage/maintenance'),
+            ],
+        ]
+    ];
