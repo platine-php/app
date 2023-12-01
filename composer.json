@@ -20,7 +20,7 @@
 	
     "require": {
         "php": "^7.4 || ^8",
-        "platine-php/framework": "1.0.x-dev"
+        "platine-php/framework": "^1.0"
     },
 	
     "require-dev": {
