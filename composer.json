@@ -8,8 +8,8 @@
         {
             "name": "NGUEREZA Tony",
             "email": "nguerezatony@gmail.com",
-	        "homepage": "http://www.iacademy.cf",
-	        "role": "developer"
+            "homepage": "https://www.platine-php.com",
+            "role": "developer"
         }
     ],
 
@@ -48,12 +48,6 @@
         "sort-packages": true
     },
     
-    "extra": {
-        "branch-alias": {
-            "dev-develop": "1.0.x-dev"
-        }
-    },
-
     "scripts": {
         "test": "phpunit --colors=always",
         "static": "phpstan analyze",
@@ -62,6 +56,6 @@
         "analyze": "phpmd app xml phpmd.xml"
     },
 	
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
