@@ -51,7 +51,7 @@ class ServerCommandTest extends PlatineTestCase
 
 
 ';
-        $this->assertEquals($expected, $this->getConsoleOutputContent());
+        $this->assertCommandOutput($expected, $this->getConsoleOutputContent());
     }
 
     public function testExecuteError(): void
@@ -76,7 +76,7 @@ class ServerCommandTest extends PlatineTestCase
 
 command error
 ';
-        $this->assertEquals($expected, $this->getConsoleOutputContent());
+        $this->assertCommandOutput($expected, $this->getConsoleOutputContent());
     }
 
 
