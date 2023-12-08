@@ -47,7 +47,7 @@ class ServerCommandTest extends PlatineTestCase
         $o->bind($app);
         $o->parse(['platine']);
         $o->execute();
-        $expected = 'Running command [' . PHP_BINARY . ' -S 0.0.0.0:8080 -t public]
+        $expected = 'Running command [' . PHP_BINARY . ' -S localhost:8080 -t public]
 
 
 ';
@@ -72,7 +72,7 @@ class ServerCommandTest extends PlatineTestCase
         $o->bind($app);
         $o->parse(['platine']);
         $o->execute();
-        $expected = 'Running command [' . PHP_BINARY . ' -S 0.0.0.0:8080 -t public]
+        $expected = 'Running command [' . PHP_BINARY . ' -S localhost:8080 -t public]
 
 command error
 ';
