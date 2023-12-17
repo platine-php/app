@@ -20,17 +20,13 @@ class WelcomeActionTest extends PlatineTestCase
     public function testHandle(): void
     {
         $app = $this->getMockInstance(Application::class);
-        $app->expects($this->exactly(1))
-                ->method('getStoragePath');
+        $this->expectMethodCallCount($app, 'getStoragePath', 1);
 
         $request = $this->getMockInstance(ServerRequest::class);
-        $request->expects($this->exactly(1))
-                ->method('getAttribute');
+        $this->expectMethodCallCount($request, 'getAttribute', 1);
 
         $template = $this->getMockInstance(Template::class);
-
-        $template->expects($this->exactly(1))
-                ->method('render');
+        $this->expectMethodCallCount($template, 'render', 1);
 
         $o = new WelcomeAction($template, $app);
         $res = $o->handle($request);

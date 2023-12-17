@@ -19,13 +19,11 @@ class DemoMiddlewareTest extends PlatineTestCase
     public function testProcess(): void
     {
         $request = $this->getMockInstance(ServerRequest::class);
-        $request->expects($this->exactly(1))
-                ->method('withAttribute');
+        $this->expectMethodCallCount($request, 'withAttribute', 1);
+
 
         $handler = $this->getMockInstance(HttpKernel::class);
-
-        $handler->expects($this->exactly(1))
-                ->method('handle');
+        $this->expectMethodCallCount($handler, 'handle', 1);
 
         $o = new DemoMiddleware();
         $res = $o->process($request, $handler);
