@@ -14,44 +14,40 @@ class AddConfigurationTable20220109074106 extends AbstractMigration
       //Action when migrate up
         $this->create('configurations', function (CreateTable $table) {
             $table->integer('id')
-                  ->autoincrement()
-                 ->primary();
+                    ->autoincrement()
+                    ->primary();
 
             $table->string('env')
-                 ->description('The config environment')
-                 ->index();
+                   ->description('The config environment')
+                   ->index();
 
             $table->string('module')
-                 ->description('The module')
-                 ->index()
-                 ->notNull();
+                    ->description('The module')
+                    ->index()
+                    ->notNull();
 
             $table->string('name')
-                 ->description('The config name')
-                  ->index();
-
-            $table->text('value')
-                 ->description('The config value');
-
-            $table->string('type')
-                 ->description('The config data type')
-                 ->notNull();
-
-            $table->text('comment')
-                 ->description('The config description');
-
-            $table->fixed('status', 1)
-                 ->description('The config status')
-                 ->defaultValue('N')
-                 ->notNull();
-
-            $table->datetime('created_at')
-                  ->description('created date')
+                  ->description('The config name')
+                  ->index()
                   ->notNull();
 
-            $table->datetime('updated_at')
-                  ->description('updated date');
+            $table->text('value')
+                    ->description('The config value');
 
+            $table->string('type')
+                   ->description('The config data type')
+                   ->notNull();
+
+            $table->text('comment')
+                  ->description('The config description');
+
+            $table->enum('status', ['Y', 'N'])
+                 ->description('The config status')
+                 ->defaultValue('Y')
+                 ->notNull();
+
+            $table->timestamps();
+            
             $table->engine('INNODB');
         });
     }

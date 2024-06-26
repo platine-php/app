@@ -29,25 +29,23 @@ class AddUsersTable20210705065248 extends AbstractMigration
                  ->description('The user password')
                  ->notNull();
 
-            $table->fixed('status', 1)
-                 ->description('The user status, A=Active, D=Deactive')
-                 ->defaultValue('D');
+            $table->enum('status', ['A', 'D'])
+                 ->description('The user status, A=Active, D=Deactive/Locked')
+                 ->defaultValue('D')
+                 ->notNull();
 
             $table->string('lastname')
-                 ->description('The user lastname');
+                 ->description('The user lastname')
+                 ->notNull();
 
             $table->string('firstname')
-                 ->description('The user firstname');
+                 ->description('The user firstname')
+                  ->notNull();
 
             $table->string('role')
                  ->description('The user role or function');
 
-            $table->datetime('created_at')
-                  ->description('created date')
-                  ->notNull();
-
-            $table->datetime('updated_at')
-                  ->description('last updated date');
+            $table->timestamps();
 
             $table->engine('INNODB');
         });

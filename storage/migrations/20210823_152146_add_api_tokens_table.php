@@ -12,34 +12,30 @@ class AddApiTokensTable20210823152146 extends AbstractMigration
       //Action when migrate up
         $this->create('tokens', function (CreateTable $table) {
             $table->integer('id')
-              ->autoincrement()
-             ->primary();
+                    ->autoincrement()
+                    ->primary();
 
             $table->string('token')
-             ->unique()
-             ->notNull();
+                   ->unique()
+                   ->notNull();
 
             $table->string('refresh_token')
-             ->unique()
-             ->notNull();
+                   ->unique()
+                   ->notNull();
 
             $table->datetime('expire_at')
-             ->notNull();
+                  ->notNull();
 
             $table->integer('user_id')
-                ->description('The owner of the token')
-                ->notNull();
+                   ->description('The owner of the token')
+                   ->notNull();
 
+            $table->timestamps();
+            
             $table->foreign('user_id')
-                ->references('users', 'id')
-                ->onDelete('NO ACTION');
-            $table->datetime('created_at')
-              ->description('created date')
-              ->notNull();
-
-            $table->datetime('updated_at')
-              ->description('last updated date');
-
+                    ->references('users', 'id')
+                    ->onDelete('NO ACTION');
+            
             $table->engine('INNODB');
         });
     }

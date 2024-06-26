@@ -14,20 +14,27 @@ class AddPermissionsTable20210717094547 extends AbstractMigration
             $table->integer('id')
                   ->autoincrement()
                  ->primary();
+            
             $table->string('code')
                  ->description('The permission code')
                  ->unique()
                  ->notNull();
+            
             $table->string('description')
                  ->description('The permission description')
                  ->notNull();
+            
             $table->string('depend')
                  ->description('The permission dependency');
-            $table->datetime('created_at')
-                  ->description('permission created at')
-                  ->notNull();
-            $table->datetime('updated_at')
-                  ->description('permission updated at');
+            
+            $table->integer('parent_id')
+                  ->description('The parent permission');
+            
+            $table->timestamps();
+            
+            $table->foreign('parent_id')
+                 ->references('permissions', 'id')
+                 ->onDelete('CASCADE');
 
             $table->engine('INNODB');
         });
