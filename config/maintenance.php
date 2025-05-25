@@ -1,5 +1,6 @@
 <?php
-
+    declare(strict_types=1);
+    
     return [
         'driver' => env('PL_APP_MAINTENANCE_DRIVER', 'file'),
         'bypass_route' => '',

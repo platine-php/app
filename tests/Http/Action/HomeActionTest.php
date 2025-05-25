@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Platine\Test\App\Http\Action;
 
-use Platine\App\Http\Action\WelcomeAction;
+use Platine\App\Http\Action\HomeAction;
 use Platine\Dev\PlatineTestCase;
 use Platine\Framework\App\Application;
 use Platine\Framework\Http\Response\TemplateResponse;
@@ -15,7 +15,7 @@ use Platine\Template\Template;
  * @group core
  * @group app
  */
-class WelcomeActionTest extends PlatineTestCase
+class HomeActionTest extends PlatineTestCase
 {
     public function testHandle(): void
     {
@@ -28,7 +28,7 @@ class WelcomeActionTest extends PlatineTestCase
         $template = $this->getMockInstance(Template::class);
         $this->expectMethodCallCount($template, 'render', 1);
 
-        $o = new WelcomeAction($template, $app);
+        $o = new HomeAction($template, $app);
         $res = $o->handle($request);
 
         $this->assertInstanceOf(TemplateResponse::class, $res);

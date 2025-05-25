@@ -3,9 +3,8 @@
 declare(strict_types=1);
 
 /**
-* the directory separator, under windows it is \ and Unix, Linux /
+* The directory separator to be used
 */
-
 define('DS', DIRECTORY_SEPARATOR);
 
 /**
@@ -19,7 +18,7 @@ define('ROOT_PATH', dirname(realpath(__DIR__)) . DS);
 /**
 * The path to the "app" directory.
 *
-* That contains most of the application files (Action,Entities, Repositories, etc.)
+* That contains most of the application files (Action, Entities, Repositories, etc.)
 */
 define('APP_PATH', ROOT_PATH . 'app' . DS);
 
@@ -27,7 +26,7 @@ define('APP_PATH', ROOT_PATH . 'app' . DS);
 * The path to the configuration directory.
 *
 * That contains most of the configuration files for your
-* application (database, class loading file, functions, etc.)
+* application (database, logging, translation, authentication, etc.)
 */
 define('CONFIG_PATH', ROOT_PATH . 'config' . DS);
 
@@ -39,23 +38,18 @@ define('CONFIG_PATH', ROOT_PATH . 'config' . DS);
 define('STORAGE_PATH', ROOT_PATH . 'storage' . DS);
 
 /**
-* The path to the directory of sources external to your application.
-*
-* If you have already used "composer" you know what that means.
+* The path to the directory of composer dependencies for your application.
 */
 define('VENDOR_PATH', ROOT_PATH . 'vendor' . DS);
 
 /**
-* The environment of your application (production, test, development).
+* The environment of your application something 
+ * like production, test, development, etc.
 *
-* if your application is still in development you use the value "dev"
-* so you will have the display of the error messages, etc.
-* Once you finish the development of your application that is to put it online
-* you change this value to "prod" or "testing", in this case there will be deactivation of error messages,
-* the loading of the system, will be fast.
 */
 define('ENVIRONMENT', 'dev');
 
+// Require the composer autoload file
 require VENDOR_PATH . 'autoload.php';
 
 use Platine\Framework\App\Application;
@@ -72,6 +66,5 @@ $app->setConfigPath(CONFIG_PATH)
 /** @var HttpKernel $kernel */
 $kernel = $app->make(HttpKernel::class);
 
-// let's go.
-// Do the magic
+// let's go, do the magic
 $kernel->run();

@@ -1,9 +1,10 @@
 <?php
-
-use Platine\OAuth2\Grant\AuthorizationGrant;
-use Platine\OAuth2\Grant\ClientCredentialsGrant;
-use Platine\OAuth2\Grant\PasswordGrant;
-use Platine\OAuth2\Grant\RefreshTokenGrant;
+    declare(strict_types=1);
+    
+    use Platine\OAuth2\Grant\AuthorizationGrant;
+    use Platine\OAuth2\Grant\ClientCredentialsGrant;
+    use Platine\OAuth2\Grant\PasswordGrant;
+    use Platine\OAuth2\Grant\RefreshTokenGrant;
 
     return [
         'grants' => [

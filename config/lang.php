@@ -1,5 +1,6 @@
 <?php
-
+    declare(strict_types=1);
+    
     return [
         'locale' => env('PL_APP_LOCALE', 'en_US'),
         'store_name' => 'app_lang',

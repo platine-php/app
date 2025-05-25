@@ -1,5 +1,6 @@
 <?php
-
+    declare(strict_types=1);
+    
     return [
         'driver' => env('PL_CACHE_DRIVER', 'file'),
         'ttl'    => env('PL_CACHE_TTL', 300, 'int'),

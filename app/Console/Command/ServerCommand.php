@@ -79,7 +79,7 @@ class ServerCommand extends Command
     /**
      * {@inheritdoc}
      */
-    public function execute()
+    public function execute(): mixed
     {
         $host = $this->getOptionValue('address');
         $port = $this->getOptionValue('port');
@@ -95,5 +95,7 @@ class ServerCommand extends Command
         if ($this->shell->getExitCode() !== 0) {
             $writer->boldRed($this->shell->getErrorOutput(), true);
         }
+
+        return true;
     }
 }

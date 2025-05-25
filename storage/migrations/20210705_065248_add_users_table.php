@@ -16,7 +16,7 @@ class AddUsersTable20210705065248 extends AbstractMigration
                  ->primary();
 
             $table->string('username')
-                 ->description('The user username')
+                 ->description('The username')
                  ->unique()
                  ->notNull();
 
@@ -43,7 +43,7 @@ class AddUsersTable20210705065248 extends AbstractMigration
                   ->notNull();
 
             $table->string('role')
-                 ->description('The user role or function');
+                 ->description('The user role or job');
 
             $table->timestamps();
 

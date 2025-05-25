@@ -1,5 +1,6 @@
 <?php
-
+    declare(strict_types=1);
+    
     return [
         'relying_party_id' => env('PL_WEBAUTHN_RELYING_PARTY_ID', 'localhost'),
         'relying_party_name' => env('PL_WEBAUTHN_RELYING_PARTY_NAME', 'Platine App'),

@@ -1,13 +1,14 @@
 <?php
-
-use Platine\App\Provider\AppServiceProvider;
-use Platine\App\Provider\ConsoleServiceProvider;
-use Platine\Framework\Service\Provider\CommandServiceProvider;
-use Platine\Framework\Service\Provider\ErrorHandlerServiceProvider;
-use Platine\Framework\Service\Provider\FilesystemServiceProvider;
-use Platine\Framework\Service\Provider\LoggerServiceProvider;
-use Platine\Framework\Service\Provider\RoutingServiceProvider;
-use Platine\Framework\Service\Provider\TemplateServiceProvider;
+    declare(strict_types=1);
+    
+    use Platine\App\Provider\AppServiceProvider;
+    use Platine\App\Provider\ConsoleServiceProvider;
+    use Platine\Framework\Service\Provider\CommandServiceProvider;
+    use Platine\Framework\Service\Provider\ErrorHandlerServiceProvider;
+    use Platine\Framework\Service\Provider\FilesystemServiceProvider;
+    use Platine\Framework\Service\Provider\LoggerServiceProvider;
+    use Platine\Framework\Service\Provider\RoutingServiceProvider;
+    use Platine\Framework\Service\Provider\TemplateServiceProvider;
 
     return [
         //Framework
@@ -31,6 +32,6 @@ use Platine\Framework\Service\Provider\TemplateServiceProvider;
         ConsoleServiceProvider::class,
         // SchedulerServiceProvider::class,
 
-        //Custom
+        // Application
         AppServiceProvider::class,
     ];

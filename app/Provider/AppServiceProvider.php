@@ -47,7 +47,7 @@ declare(strict_types=1);
 
 namespace Platine\App\Provider;
 
-use Platine\App\Http\Action\WelcomeAction;
+use Platine\App\Http\Action\HomeAction;
 use Platine\App\Http\Middleware\DemoMiddleware;
 use Platine\Framework\Service\ServiceProvider;
 
@@ -63,6 +63,6 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(DemoMiddleware::class);
-        $this->app->bind(WelcomeAction::class);
+        $this->app->bind(HomeAction::class);
     }
 }

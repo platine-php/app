@@ -1,8 +1,9 @@
 <?php
-
-use Platine\Framework\Auth\Entity\Permission;
-use Platine\Framework\Auth\Entity\Role;
-use Platine\Framework\Auth\Entity\User;
+    declare(strict_types=1);
+    
+    use Platine\Framework\Auth\Entity\Permission;
+    use Platine\Framework\Auth\Entity\Role;
+    use Platine\Framework\Auth\Entity\User;
 
     return [
         'authentication' => [

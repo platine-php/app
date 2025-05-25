@@ -24,9 +24,6 @@ class AddPermissionsTable20210717094547 extends AbstractMigration
                  ->description('The permission description')
                  ->notNull();
             
-            $table->string('depend')
-                 ->description('The permission dependency');
-            
             $table->integer('parent_id')
                   ->description('The parent permission');
             

@@ -30,9 +30,9 @@
  */
 
 /**
- *  @file WelcomeAction.php
+ *  @file HomeAction.php
  *
- *  The Platine Welcome action class
+ *  The Platine Home action class
  *
  *  @package    Platine\App\Http\Action
  *  @author Platine Developers team
@@ -55,32 +55,20 @@ use Platine\Http\ServerRequestInterface;
 use Platine\Template\Template;
 
 /**
- * @class WelcomeAction
+ * @class HomeAction
  * @package Platine\App\Http\Action
  */
-class WelcomeAction implements RequestHandlerInterface
+class HomeAction implements RequestHandlerInterface
 {
-    /**
-     * The template instance
-     * @var Template
-     */
-    protected Template $template;
-
-    /**
-     * The application instance
-     * @var Application
-     */
-    protected Application $app;
-
     /**
      * Create new instance
      * @param Template $template
      * @param Application $app
      */
-    public function __construct(Template $template, Application $app)
-    {
-        $this->template = $template;
-        $this->app = $app;
+    public function __construct(
+        protected Template $template,
+        protected Application $app
+    ) {
     }
 
     /**
@@ -90,12 +78,12 @@ class WelcomeAction implements RequestHandlerInterface
     {
         $data = [
             'action' => __FILE__,
-            'view' => sprintf('%s/resource/templates/welcome.html', $this->app->getStoragePath()),
+            'view' => sprintf('%s/resource/templates/home.html', $this->app->getStoragePath()),
             'middleware' => $request->getAttribute('middleware'),
         ];
         return new TemplateResponse(
             $this->template,
-            'welcome',
+            'home',
             $data
         );
     }
