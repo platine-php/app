@@ -48,8 +48,6 @@ class ServerCommandTest extends PlatineTestCase
         $o->parse(['platine']);
         $o->execute();
         $expected = 'Running command [' . PHP_BINARY . ' -S localhost:8080 -t public]
-
-
 ';
         $this->assertCommandOutput($expected, $this->getConsoleOutputContent());
     }
@@ -73,9 +71,7 @@ class ServerCommandTest extends PlatineTestCase
         $o->parse(['platine']);
         $o->execute();
         $expected = 'Running command [' . PHP_BINARY . ' -S localhost:8080 -t public]
-
-command error
-';
+command error';
         $this->assertCommandOutput($expected, $this->getConsoleOutputContent());
     }
 

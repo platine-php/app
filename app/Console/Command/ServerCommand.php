@@ -57,23 +57,15 @@ use Platine\Console\Command\Shell;
 class ServerCommand extends Command
 {
     /**
-     * The shell instance to use
-     * @var Shell
-     */
-    protected Shell $shell;
-
-    /**
      * Create new instance
      * {@inheritdoc}
      */
-    public function __construct(Shell $shell)
+    public function __construct(protected Shell $shell)
     {
         parent::__construct('server', 'Command to manage PHP development server');
         $this->addOption('-a|--address', 'Server address', 'localhost', true);
         $this->addOption('-p|--port', 'Server listen port', '8080', true);
         $this->addOption('-r|--root', 'Server document root', 'public', true);
-
-        $this->shell = $shell;
     }
 
     /**
@@ -88,12 +80,19 @@ class ServerCommand extends Command
         $writer = $this->io()->writer();
         $writer->boldYellow(sprintf('Running command [%s]', $cmd), true);
         $this->shell->setCommand($cmd);
-        $this->shell->setOptions(null, null, null, ['bypass_shell' => false]);
 
         $this->shell->execute(true);
-        $writer->boldWhite($this->shell->getOutput(), true);
-        if ($this->shell->getExitCode() !== 0) {
-            $writer->boldRed($this->shell->getErrorOutput(), true);
+        while (true) {
+            // TODO: php builtin server use error file descriptor for
+            // it output
+            $output = $this->shell->getErrorOutput(1);
+            if (!empty($output)) {
+                $writer->boldWhite($output);
+            }
+
+            if ($this->shell->isRunning() === false) {
+                break;
+            }
         }
 
         return true;
