@@ -1,14 +1,28 @@
+# Common files
 .env
 .idea
-git.sh
-tests.sh
 composer.lock
-vendor
+/vendor/
 nbproject
 .phpunit.result.cache
 .php_cs.cache
+
+# Storage temporary files
 storage/tmp/logs/*.log
 storage/tmp/cache/*
 !storage/tmp/cache/.gitignore
 storage/tmp/session/*
 !storage/tmp/session/.gitignore
+
+# Storage Data files
+storage/data/attachments/*
+!storage/data/attachments/.gitignore
+storage/data/tmp/*
+!storage/data/tmp/.gitignore
+storage/data/prints/*
+!storage/data/prints/.gitignore
+storage/data/images/*
+!storage/data/images/.gitignore
+
+# Maintenance
+storage/maintenance

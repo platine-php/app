@@ -2,12 +2,12 @@
     declare(strict_types=1);
     
     return [
-        'driver' => env('PL_APP_MAINTENANCE_DRIVER', 'file'),
+        'driver' => env('PL_MAINTENANCE_DRIVER', 'file'),
         'bypass_route' => '',
         'url_whitelist' => [],
         'cookie' => [
-            'name' => env('PL_APP_MAINTENANCE_COOKIE_NAME', 'platine_maintenance'),
-            'lifetime' => env('PL_APP_MAINTENANCE_COOKIE_LIFETIME', 43200, 'int'),
+            'name' => env('PL_MAINTENANCE_COOKIE_NAME', 'platine_maintenance'),
+            'lifetime' => env('PL_MAINTENANCE_COOKIE_LIFETIME', 43200, 'int'),
         ],
         'storages' => [
             'file' => [
