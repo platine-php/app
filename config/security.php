@@ -27,7 +27,7 @@
                 'Authorization',
             ],
             'expose_headers' => [],
-            'allow_methods' => ['GET', 'OPTIONS', 'HEAD', 'PUT', 'POST', 'DELETE'],
+            'allow_methods' => ['GET', 'PATCH', 'OPTIONS', 'HEAD', 'PUT', 'POST', 'DELETE'],
             'allow_credentials' => true,
             'max_age' => 1800,
         ],
