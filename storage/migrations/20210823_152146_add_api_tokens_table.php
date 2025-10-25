@@ -15,10 +15,6 @@ class AddApiTokensTable20210823152146 extends AbstractMigration
                     ->autoincrement()
                     ->primary();
 
-            $table->string('token')
-                   ->unique()
-                   ->notNull();
-
             $table->string('refresh_token')
                    ->unique()
                    ->notNull();
