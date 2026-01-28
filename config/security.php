@@ -16,6 +16,7 @@
             'origins' => ['*'],
             'allow_headers' => [
                 'Origin',
+                'X-Request-ID',
                 'X-Requested-With',
                 'Content-Type',
                 'Accept',
