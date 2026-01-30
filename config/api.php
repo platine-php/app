@@ -14,9 +14,8 @@
         ],
         'sign' => [
             'secret' => env('PL_API_SIGN_SECRET', ''), // please set it
-            'hmac' => [
-                'signature_algo'    => env('PL_API_HMAC_SIGN_ALGO', 'sha256'),
-                'token_header_algo' => env('PL_API_HMAC_HEADER_ALGO', 'HS256'),
-            ],
-        ]
+            'public_key' => env('PL_API_SIGN_PUBLIC_KEY', ''), // need for asymmetric signature
+            'signature_algo' => env('PL_API_SIGN_ALGO', 'sha256'),
+            'token_header_algo' => env('PL_API_HEADER_ALGO', 'HS256'),
+        ],
     ];
