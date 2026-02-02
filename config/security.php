@@ -13,7 +13,7 @@
         ],
         'cors' => [
             'path' => '/api',
-            'origins' => ['*'],
+            'origins' => env('PL_SECURITY_CORS_ORIGINS', ['*'], 'array'),
             'allow_headers' => [
                 'Origin',
                 'X-Request-ID',
