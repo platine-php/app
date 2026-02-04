@@ -14,9 +14,9 @@
             PasswordGrant::class,
         ],
         'ttl' => [
-            'authorization_code' => env('PL_OAUTH_TTL_AUTHORIZATION_CODE', 120, 'int'),
-            'access_token' => env('PL_OAUTH_TTL_ACCESS_TOKEN', 3600, 'int'),
-            'refresh_token' => env('PL_OAUTH_TTL_REFRESH_TOKEN', 86400, 'int'),
+            'authorization_code' => env('PL_OAUTH_TTL_AUTHORIZATION_CODE', 120, 'duration'),
+            'access_token' => env('PL_OAUTH_TTL_ACCESS_TOKEN', 3600, 'duration'),
+            'refresh_token' => env('PL_OAUTH_TTL_REFRESH_TOKEN', 86400, 'duration'),
         ],
         'rotate_refresh_token' => env('PL_OAUTH_ROTATE_REFRESH_TOKEN', false),
         'revoke_rotated_refresh_token' => env('PL_OAUTH_REVOKE_ROTATED_REFRESH_TOKEN', true),

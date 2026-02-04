@@ -7,7 +7,7 @@
 
     return [
         'cache_driver' => env('PL_TEMPLATE_CACHE_DRIVER', NullCache::class),
-        'cache_expire' => env('PL_TEMPLATE_CACHE_TTL', 5600, 'int'),
+        'cache_expire' => env('PL_TEMPLATE_CACHE_TTL', 5600, 'duration'),
         'cache_dir' => __DIR__ . '/../storage/tmp/cache',
         'cache_prefix' => env('PL_TEMPLATE_CACHE_FILE_PREFIX', '__platine_template'),
         'template_dir' => env('PL_TEMPLATE_PATH', __DIR__ . '/../storage/resource/templates'),

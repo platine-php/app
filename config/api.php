@@ -5,8 +5,8 @@
         'auth' => [
             'path'                 => '/api',
             'url_whitelist'        => [],
-            'token_expire'         => env('PL_API_TOKEN_EXPIRE', 300, 'int'),
-            'refresh_token_expire' => env('PL_API_REFRESH_TOKEN_EXPIRE', 7776000, 'int'),
+            'token_expire'         => env('PL_API_TOKEN_EXPIRE', 300, 'duration'),
+            'refresh_token_expire' => env('PL_API_REFRESH_TOKEN_EXPIRE', 7776000, 'duration'),
             'headers' => [
                 'name'       => 'Authorization',
                 'token_type' => 'Bearer',

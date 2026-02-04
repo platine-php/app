@@ -7,7 +7,7 @@
         'url_whitelist' => [],
         'cookie' => [
             'name' => env('PL_MAINTENANCE_COOKIE_NAME', 'platine_maintenance'),
-            'lifetime' => env('PL_MAINTENANCE_COOKIE_LIFETIME', 43200, 'int'),
+            'lifetime' => env('PL_MAINTENANCE_COOKIE_LIFETIME', 43200, 'duration'),
         ],
         'storages' => [
             'file' => [

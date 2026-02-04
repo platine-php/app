@@ -3,7 +3,7 @@
     
     return [
         'driver' => env('PL_CACHE_DRIVER', 'file'),
-        'ttl'    => env('PL_CACHE_TTL', 300, 'int'),
+        'ttl'    => env('PL_CACHE_TTL', 300, 'duration'),
         'storages' => [
             'file' => [
                 'path'   => env('PL_CACHE_FILE_PATH', __DIR__ . '/../storage/tmp/cache'),
