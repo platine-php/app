@@ -30,7 +30,7 @@
             'expose_headers' => [],
             'allow_methods' => ['GET', 'PATCH', 'OPTIONS', 'HEAD', 'PUT', 'POST', 'DELETE'],
             'allow_credentials' => true,
-            'max_age' => 1800,
+            'max_age' => 86400,
         ],
         'policies' => [
             'server' => 'Platine',
