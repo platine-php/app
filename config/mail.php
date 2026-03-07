@@ -11,5 +11,6 @@
             'response_timeout' => env('PL_MAIL_SMTP_RESPONSE_TIMEOUT', 10, 'duration'),
             'username' => env('PL_MAIL_SMTP_USERNAME', ''),
             'password' => env('PL_MAIL_SMTP_PASSWORD', ''),
+            'encryption' => env('PL_MAIL_SMTP_ENCRYPTION', 'none'), // "none", "tls", "starttls"
          ],
     ];
