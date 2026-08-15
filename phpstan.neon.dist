@@ -1,6 +1,7 @@
 parameters:
     level: 8
     paths:
+        - config
         - app
     parallel:
         jobSize: 50

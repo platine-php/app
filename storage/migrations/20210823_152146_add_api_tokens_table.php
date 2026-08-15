@@ -30,7 +30,7 @@ class AddApiTokensTable20210823152146 extends AbstractMigration
             
             $table->foreign('user_id')
                     ->references('users', 'id')
-                    ->onDelete('NO ACTION');
+                    ->onDelete('CASCADE');
             
             $table->engine('INNODB');
         });
